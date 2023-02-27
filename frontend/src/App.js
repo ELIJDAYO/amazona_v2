@@ -1,5 +1,5 @@
 import { Container, Navbar } from 'react-bootstrap';
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
 import { LinkContainer } from 'react-router-bootstrap';
@@ -17,7 +17,7 @@ function App() {
           </Navbar>
         </header>
         <main>
-          <Container>
+          <Container className="mr-3">
             <Routes>
               <Route path="/product/:slug" element={<ProductScreen />} />
               <Route path="/" element={<HomeScreen />} />
