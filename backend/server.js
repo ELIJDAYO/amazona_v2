@@ -19,10 +19,13 @@ mongoose
 
 const app = express();
 // By having this, the forum data in the post request will be converted to a JSON
-// object inside req.body.
+// object inside reqbody.
 app.use(express.json());
-app.use(express.urlencoded('extended: true'));
-
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
 // seeding sample data
 app.use('/api/seed', seedRouter);
 app.use('/api/products', productRouter);
