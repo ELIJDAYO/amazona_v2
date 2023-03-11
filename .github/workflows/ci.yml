@@ -1,18 +1,18 @@
 name: CI
 on: 
-  push:
-    branches: [develop]
+ push:
+  branches: [develop]
 
 jobs: 
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - name: Use NodeJs
-    uses: actions/setup-node@v3
-    with:
-      node-version: "18.x"
+ build:
+  runs-on: ubuntu-latest
+  steps:
+  - uses: actions/checkout@v3
+  - name: Use NodeJs
+  uses: actions/setup-node@v3
+  with:
+   node-version: "18.x"
     - run: npm ci
     - run: npm test -- --coverage
-      env:
-        CI: true
+    env:
+     CI: true
